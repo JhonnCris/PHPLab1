@@ -22,6 +22,8 @@ include "db.php";
     <th>Name</th>
     <th>Contact</th>
     <th>Email</th>
+    <th>Address</th>
+    <th>Created At</th>
   </tr>
 
 <?php
@@ -29,10 +31,12 @@ $result = mysqli_query($conn, "SELECT * FROM clients");
 
 while ($row = mysqli_fetch_assoc($result)) {
   echo "<tr>";
-  echo "<td>".$row['id']."</td>";
-  echo "<td>".$row['name']."</td>";
-  echo "<td>".$row['contact']."</td>";
+  echo "<td>".$row['client_id']."</td>";
+  echo "<td>".$row['full_name']."</td>";
+  echo "<td>".$row['phone']."</td>";
   echo "<td>".$row['email']."</td>";
+  echo "<td>".$row['address']."</td>";
+  echo "<td>".$row['created_at']."</td>";
   echo "</tr>";
 }
 ?>

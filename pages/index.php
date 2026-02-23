@@ -30,8 +30,8 @@ $revenue = $revRow['s'];
  
 <p>
   Quick links:
-  <a href="/Lazar_assessment/pages/clients_add.php">Add Client</a> |
-  <a href="/Lazar_assessment/pages/bookings_create.php">Create Booking</a>
+  <a href="clients_add.php">Add Client</a> |
+  <a href="bookings_create.php">Create Booking</a>
 </p>
  
 </body>
