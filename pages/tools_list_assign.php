@@ -17,9 +17,10 @@ include "db.php";
 
 <table border="1" cellpadding="10">
   <tr>
-    <th>ID</th>
+    <th>Tool ID</th>
     <th>Tool Name</th>
-    <th>Status</th>
+    <th>Quantity total</th>
+    <th>Quantity available</th>
   </tr>
 
 <?php
@@ -27,9 +28,10 @@ $result = mysqli_query($conn, "SELECT * FROM tools");
 
 while ($row = mysqli_fetch_assoc($result)) {
   echo "<tr>";
-  echo "<td>".$row['id']."</td>";
+  echo "<td>".$row['tool_id']."</td>";
   echo "<td>".$row['tool_name']."</td>";
-  echo "<td>".$row['status']."</td>";
+  echo "<td>".$row['quantity_total']."</td>";
+  echo "<td>".$row['quantity_available']."</td>";
   echo "</tr>";
 }
 ?>

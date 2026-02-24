@@ -1,7 +1,6 @@
 <?php
 include "db.php";
 ?>
-
 <!doctype html>
 <html>
 <head>
@@ -10,20 +9,19 @@ include "db.php";
 </head>
 <body>
 
-<?php include "nav.php";
-
- ?>
+<?php include "nav.php"; ?>
 
 <h2>Clients List</h2>
 
 <table border="1" cellpadding="10">
   <tr>
-    <th>ID</th>
+    <th>Client ID</th>
     <th>Name</th>
     <th>Contact</th>
     <th>Email</th>
     <th>Address</th>
     <th>Created At</th>
+    <th>Action</th>
   </tr>
 
 <?php
@@ -37,11 +35,11 @@ while ($row = mysqli_fetch_assoc($result)) {
   echo "<td>".$row['email']."</td>";
   echo "<td>".$row['address']."</td>";
   echo "<td>".$row['created_at']."</td>";
+  echo "<td><a href='clients_edit.php?id=".$row['client_id']."'>Edit</a></td>";
   echo "</tr>";
 }
 ?>
 
 </table>
-
 </body>
 </html>

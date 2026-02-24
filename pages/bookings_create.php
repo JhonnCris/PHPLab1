@@ -2,14 +2,18 @@
 include "db.php";
 
 if (isset($_POST['save'])) {
-
+  $booking_id = $_POST['booking_id'];
   $client_id = $_POST['client_id'];
   $service_id = $_POST['service_id'];
   $date = $_POST['booking_date'];
+  $hour = $_POST['hours'];
+  $hourly_rate = $_POST['hourly_rate_snapshot'];
+  $totalcost = $hour * $hourly_rate;
   $status = $_POST['status'];
+  $createdat = $_POST['created_at'];
 
-  mysqli_query($conn, "INSERT INTO bookings (client_id, service_id, booking_date, status)
-                       VALUES ('$client_id', '$service_id', '$date', '$status')");
+  mysqli_query($conn, "INSERT INTO bookings (booking_id, client_id, service_id, booking_date, total_cost, status, created_at)
+                       VALUES ('$booking_id', '$client_id', '$service_id', '$date', '$totalcost', '$status', '$createdat')");
 
   header("Location: bookings_list.php");
 }

@@ -18,9 +18,10 @@ include "db.php";
 
 <table border="1" cellpadding="10">
   <tr>
-    <th>ID</th>
+    <th>Payment ID</th>
     <th>Booking ID</th>
     <th>Amount Paid</th>
+    <th>Payment Method</th>
     <th>Date Paid</th>
   </tr>
 
@@ -29,9 +30,10 @@ $result = mysqli_query($conn, "SELECT * FROM payments");
 
 while ($row = mysqli_fetch_assoc($result)) {
   echo "<tr>";
-  echo "<td>".$row['id']."</td>";
+  echo "<td>".$row['payment_id']."</td>";
   echo "<td>".$row['booking_id']."</td>";
   echo "<td>₱".number_format($row['amount_paid'],2)."</td>";
+  echo "<td>".$row['payment_method']."</td>";
   echo "<td>".$row['payment_date']."</td>";
   echo "</tr>";
 }
