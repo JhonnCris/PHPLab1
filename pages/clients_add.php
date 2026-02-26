@@ -27,7 +27,7 @@ if (isset($_POST['save'])) {
 <html>
 <head><meta charset="utf-8"><title>Add Client</title></head>
 <body>
-<?php include "../nav.php"; ?>
+<?php include "nav.php"; ?>
  
 <h2>Add Client</h2>
 <p style="color:red;"><?php echo $message; ?></p>

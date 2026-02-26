@@ -42,4 +42,8 @@ nav a {
 nav a:hover {
     text-decoration: underline;
 }
-
+footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #777;
+}
